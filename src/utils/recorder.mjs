@@ -5,7 +5,7 @@ export default class Recorder {
     this.recordedBlobs = [];
   }
 
-  _setupe() {
+  _setup() {
     const options = { mineType: this.audioType };
     const isSupported = MediaRecorder.isTypeSupported(options.mineType);
 
@@ -20,7 +20,7 @@ export default class Recorder {
   }
 
   startRecording(stream) {
-    const options = this._setupe();
+    const options = this._setup();
     this.mediaRecorder = new MediaRecorder(stream, options);
 
     this.mediaRecorder.onstop = (event) => {

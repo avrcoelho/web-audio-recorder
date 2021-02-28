@@ -22,7 +22,7 @@ export default class Controller {
   }
 
   async onStopRecording() {
-    this.recorder.stopRecording();
+    await this.recorder.stopRecording();
 
     setTimeout(() => {
       const audioURL = this.recorder.getRecordingURL();
